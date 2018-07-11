@@ -1,0 +1,21 @@
+<template>
+  <div class="ui middle aligned divided list">
+    <div class="item">
+      <div class="right floated content">
+        <a class="ui button" route-href="route: createForm">Create Form</a>
+      </div>
+      <div class="content">
+        <h3 class="ui header">Forms</h3>
+      </div>
+    </div>
+    <div class="item" repeat.for="form of forms">
+      <div class="right floated content">
+        <a class="ui button" route-href="route: form; params.bind: {formId: form._id}">Use Form</a>
+        <a class="ui button" href="#/form/${form._id}/data">View Data</a>
+      </div>
+      <div class="content">
+        <a route-href="route: form; params.bind: {formId: form._id}"><h3>${form.title}</h3></a>
+      </div>
+    </div>
+  </div>
+</template>

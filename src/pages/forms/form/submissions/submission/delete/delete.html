@@ -1,0 +1,11 @@
+<template>
+  <div class="ui error message">
+    <div class="header">
+      Are you sure you want to delete submission ${submissionId}
+    </div>
+  </div>
+  <div class="ui buttons">
+    <button class="ui negative button" click.delegate="delete()">Yes</button>
+    <button class="ui button" click.delegate="cancel()">Cancel</button>
+  </div>
+</template>

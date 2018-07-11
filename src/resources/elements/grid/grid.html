@@ -1,0 +1,50 @@
+<template>
+  <div class="ui ${loading ? 'active' : ''} inverted dimmer">
+    <div class="ui text loader">Loading</div>
+  </div>
+  <table class="ui compact selectable striped celled table tablet stackable dataTable" cellspacing="0"
+         width="100%" role="grid" style="width: 100%;">
+    <thead>
+      <tr role="row">
+        <th repeat.for="col of columns"
+            class="sorting"
+            tabindex="0"
+            aria-controls="data_table"
+            aria-sort="${col.sort === 'asc' ? 'descending' : 'ascending'}"
+            aria-label="${col.label}: activate to sort column ${col.sort === 'asc' ? 'ascending' : 'descending'}"
+            click.delegate="sortColumn(col)">
+          ${col.label}
+        </th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr click.delegate="onClick(row)" repeat.for="row of rows" role="row" class="${$index % 2 ? 'even' : 'odd'}">
+        <td repeat.for="col of columns">${data(row, col)}</td>
+      </tr>
+    </tbody>
+    <tfoot>
+      <tr>
+        <td colspan="${columns.length}">
+          <div class="ui grid">
+            <div class="left aligned twelve wide column">
+              <div class="ui stackable small pagination menu">
+                <a click.delegate="setPage(page - 1)" if.bind="page > 0" class="paginate_button previous item " id="data_table_previous">
+                  <i class="angle double left icon"></i>
+                  Previous
+                </a>
+                <a click.delegate="setPage(item)" repeat.for="item of pages" class="paginate_button${page === item ? ' active' : ''} item">${item + 1}</a>
+                <a click.delegate="setPage(page + 1)" if.bind="page < columns.length - 1" class="paginate_button next item " id="data_table_next">
+                  Next
+                  <i class="angle double right icon"></i>
+                </a>
+              </div>
+            </div>
+            <div class="right aligned four wide column">
+              <div role="status" aria-live="polite">${firstItem} to ${lastItem} of ${total} total</div>
+            </div>
+          </div>
+        </td>
+      </tr>
+    </tfoot>
+  </table>
+</template>

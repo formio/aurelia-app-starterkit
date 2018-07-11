@@ -1,0 +1,51 @@
+<template>
+  <div class="ui sidebar vertical left menu overlay borderless visible sidemenu inverted grey"
+       style="transition-duration: 0.1s; overflow: hidden; outline: none;"
+       data-color="grey"
+  >
+    <div class="ui accordion inverted">
+      <a route-href="route: home" class="item logo" style="color:black;padding-top:17px;"><img src="./formio-logo.png"></a>
+      <a route-href="route: forms" class="title item">
+        <i class="browser titleIcon icon"></i>
+        Forms
+      </a>
+    </div>
+  </div>
+
+  <div class="pusher pushable">
+    <div class="navslide navwrap">
+      <div class="ui menu icon logo borderless grid" data-color="inverted white">
+        <div class="ui secondary stackable menu" style="width: 100%">
+          <a class="active item">
+            Home
+          </a>
+          <a class="item">
+            News
+          </a>
+          <a class="item">
+            About
+          </a>
+          <a class="item">
+            Portfolio
+          </a>
+          <div class="right menu">
+            <a class="ui item">
+              Logout
+            </a>
+          </div>
+        </div>        </div>
+      <div class="ui equal width left aligned padded grid stackable">
+        <div class="row">
+          <div class="sixteen wide tablet sixteen wide computer column">
+            <aurelia-crumbs></aurelia-crumbs>
+          </div>
+        </div>
+        <div class="row">
+          <div class="sixteen wide tablet sixteen wide computer column">
+            <router-view></router-view>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</template>

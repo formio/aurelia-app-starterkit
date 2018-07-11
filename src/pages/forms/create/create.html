@@ -1,0 +1,29 @@
+<template>
+  <h1>Create a form</h1>
+  <div class="ui form">
+    <div class="ui grid">
+      <div class="five wide column">
+        <label>Title</label>
+        <input type="text" name="title" value.two-way="form.title" keyup.delegate="titleChanged()">
+      </div>
+      <div class="five wide column">
+        <label>Name</label>
+        <input type="text" name="name" value.two-way="form.name">
+      </div>
+      <div class="six wide column">
+        <label>Path</label>
+        <input type="text" name="path" value.two-way="form.path">
+      </div>
+    </div>
+  </div>
+  <form-builder form.bind="form" options.bind="formOptions"></form-builder>
+  <br />
+  <div class="editButtons ui buttons">
+    <button class="ui primary button" click.delegate="save()">
+      Save
+    </button>
+    <button class="ui button" click.delegate="cancel()">
+      Cancel
+    </button>
+  </div>
+</template>

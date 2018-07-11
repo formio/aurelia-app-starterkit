@@ -1,0 +1,17 @@
+<template>
+  <div class="ui secondary stackable pointing menu">
+    <a route-href="route: useForm" class="item${tab === '' ? ' active' : ''}">
+      Use Form
+    </a>
+    <a route-href="route: submissions" class="item${tab === 'data' ? ' active' : ''}">
+      View Data
+    </a>
+    <a route-href="route: editForm" class="item${tab === 'edit' ? ' active' : ''}">
+      Edit Form
+    </a>
+    <a route-href="route: deleteForm" class="item${tab === 'delete' ? ' active' : ''}">
+      Delete Form
+    </a>
+  </div>
+  <router-view></router-view>
+</template>
