@@ -11,10 +11,10 @@
     "aurelia-animator-css": "^1.0.4",
     "aurelia-bootstrapper": "^2.2.0",
     "aurelia-crumbs": "^1.0.2",
-    "aurelia-formio": "^1.0.0-alpha.1",
+    "aurelia-formio": "^1.0.0-alpha.2",
     "aurelia-polyfills": "^1.3.0",
     "bluebird": "^3.5.1",
-    "formiojs": "^3.0.0-rc.14",
+    "formiojs": "^4.0.0-alpha.3",
     "jquery": "^3.3.1"
   },
   "peerDependencies": {},
